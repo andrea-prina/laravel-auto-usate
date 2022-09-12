@@ -3,7 +3,12 @@
 @section('main-content')
 
 <div>
-    <h1>Elenco Auto</h1>
+    <ul>
+        <li>{{$car-> targa}}</li>
+        <li>{{$car-> marca}}</li>
+        <li>{{$car-> anno_immatricolazione}}</li>
+        <li>{{$car-> kilometri}}</li>
+    </ul>
 </div>
 
 @endsection
