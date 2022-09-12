@@ -7,7 +7,7 @@
         <li>{{$car-> targa}}</li>
         <li>{{$car-> marca}}</li>
         <li>{{$car-> anno_immatricolazione}}</li>
-        <li>{{$car-> kilometri}}</li>
+        <li>{{$car-> km}}</li>
     </ul>
 </div>
 
