@@ -2,23 +2,41 @@
 
 use App\Car;
 use Illuminate\Database\Seeder;
-use Faker\Generator as Faker;
 
 class CarsTableSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Run the database seeds
      *
      * @return void
      */
-    public function run(Faker $faker)
+    public function run()
     {
-        for ($i = 0; $i < 30; $i++){
+
+        $cars = [
+            [
+                'targa' => 'AZ192BC',
+                'marca' => 'Audi',
+                'anno_immatricolazione' => '2022-09-09',
+                'km' => 0,
+            ],
+            [
+                'targa' => 'TT123ZC',
+                'marca' => 'Ford',
+                'anno_immatricolazione' => '2010-01-10',
+                'km' => 10000,
+            ],
+        ];
+
+
+
+        foreach ($cars as $car) {
+            
             $newCar = new Car();
-            $newCar->targa = $faker->jpjNumberPlate();
-            $newCar->marca = $faker->firstName();
-            $newCar->anno_immatricolazione = $faker->date('Y_m_d');
-            $newCar->km = $faker->numberBetween(0, 100000);
+            $newCar->targa = $car['targa'];
+            $newCar->marca = $car['marca'];
+            $newCar->anno_immatricolazione = $car['anno_immatricolazione'];
+            $newCar->km = $car['km'];
             $newCar->save();
         }
     }
