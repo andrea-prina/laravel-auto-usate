@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class CarController extends Controller
 {
-    public function(){
+    public function index(){
 
         $cars = Car::all();
 
