@@ -17,7 +17,7 @@ class CarsTableSeeder extends Seeder
             $newCar = new Car();
             $newCar->targa = $faker->jpjNumberPlate();
             $newCar->marca = $faker->firstName();
-            $newCar->anno_immatricolazione = $faker->year();
+            $newCar->anno_immatricolazione = $faker->date('Y_m_d');
             $newCar->km = $faker->numberBetween(0, 100000);
             $newCar->save();
         }
