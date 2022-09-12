@@ -11,6 +11,6 @@ class CarController extends Controller
 
         $cars = Car::all();
 
-        return view('homepage');
+        return view('homepage', compact('cars'));
     }
 }
