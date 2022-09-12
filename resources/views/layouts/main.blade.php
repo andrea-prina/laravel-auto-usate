@@ -8,6 +8,10 @@
     <title>Lavarel Auto Usate</title>
 </head>
 <body>
+
+    <main>
+        @yield('main-content')
+    </main>
     
 </body>
 </html>
