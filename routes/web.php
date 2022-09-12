@@ -13,9 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-<<<<<<< HEAD
+
 Route::get('/', "CarController@index")->name('homepage');
 
-=======
-Route::get('/', 'CarController@index')->name('homepage');
->>>>>>> 27172e9aa717b148df6162067cbf55c48958cf98
