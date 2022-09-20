@@ -102,6 +102,10 @@ class CarController extends Controller
      */
     public function destroy($id)
     {
-        //
+        {
+            $car = Car::findOrFail($id);
+            $car::destroy($id);
+            return redirect()->route('cars.index', $car->id)->with('delete', $car->title);
+        }
     }
 }

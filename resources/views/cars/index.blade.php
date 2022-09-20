@@ -27,7 +27,13 @@
                         <td>{{ $car->anno_immatricolazione }}</td>
                         <td>{{ $car->km }}</td>
                         <td><a href="{{ route('cars.edit', $car->id) }}" class="btn btn-sm btn-success">Edit</a><td>
-                        <td><a href="" class="btn btn-sm btn-danger">Delete</a><td>
+                        <td>
+                            <form class="delete-item" action="{{route('cars.destroy', $car->id)}}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit">Delete</button>
+                            </form>
+                        </td>
                     </tr>
                         
                     @empty
