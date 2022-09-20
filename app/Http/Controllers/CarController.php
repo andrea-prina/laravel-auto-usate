@@ -38,6 +38,16 @@ class CarController extends Controller
     public function store(Request $request)
     {
         //
+        $sendData = $request->all();
+
+        $newComic = new Car();
+        $newComic->targa = $sendData['targa'];
+        $newComic->marca = $sendData['marca'];
+        $newComic->anno_immatricolazione = $sendData['anno_immatricolazione'];
+        $newComic->km = $sendData['km'];
+        $newComic->save();
+
+        return redirect()->route('cars.index');
     }
 
     /**
@@ -61,6 +71,8 @@ class CarController extends Controller
     public function edit($id)
     {
         //
+        $car = Car::findOrFail($id);
+        return view('cars.edit', compact('car'));
     }
 
     /**
@@ -73,6 +85,13 @@ class CarController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $sendData = $request->all();
+
+        $car = Car::findOrFail($id);
+        
+        $car->update($sendData);
+
+        return redirect()->route('cars.show', $car->id);
     }
 
     /**
