@@ -25,7 +25,8 @@ class CarController extends Controller
      */
     public function create()
     {
-        //
+        $car = new Car();
+        return view('cars.create', compact('car'));
     }
 
     /**

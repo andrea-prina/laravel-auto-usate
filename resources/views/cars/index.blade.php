@@ -21,7 +21,7 @@
                 <tbody>
                     @forelse ($cars as $car)
                     <tr>
-                        <th scope="row"><a href="" class="text-decoration-none">{{ $car->id }}</a></th>
+                        <th scope="row"><a href="{{ route('cars.show', $car->id) }}" class="text-decoration-none">{{ $car->id }}</a></th>
                         <td>{{ $car->targa }}</td>
                         <td>{{ $car->marca }}</td>
                         <td>{{ $car->anno_immatricolazione }}</td>

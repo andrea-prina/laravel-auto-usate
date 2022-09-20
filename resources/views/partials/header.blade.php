@@ -14,7 +14,7 @@
                     <a class="nav-link" href="{{ route('cars.index') }}">Cars</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Add Car</a>
+                    <a class="nav-link" href="{{ route('cars.create') }}">Add Car</a>
                 </li>
             </ul>
         </div>
