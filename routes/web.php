@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::get('/', "CarController@index")->name('homepage');
+Route::get('/', 'HomeController@index')->name('home');
+Route::resource('/cars', 'CarController');
 
