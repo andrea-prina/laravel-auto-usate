@@ -4,10 +4,14 @@
 
 <div>
     <ul>
-        <li>{{$car-> targa}}</li>
-        <li>{{$car-> marca}}</li>
-        <li>{{$car-> anno_immatricolazione}}</li>
-        <li>{{$car-> km}}</li>
+        @forelse ($cars as $car )
+            <li>{{$car->targa}}</li>
+            <li>{{$car->marca}}</li>
+            <li>{{$car->anno_immatricolazione}}</li>
+            <li>{{$car->km}}</li>
+        @empty
+            
+        @endforelse
     </ul>
 </div>
 

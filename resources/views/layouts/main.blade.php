@@ -8,10 +8,12 @@
     <title>Lavarel Auto Usate</title>
 </head>
 <body>
+    @include('includes.header')
 
     <main>
         @yield('main-content')
     </main>
     
+    @include('includes.footer')
 </body>
 </html>
