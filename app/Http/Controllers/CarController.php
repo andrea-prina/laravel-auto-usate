@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Car;
+use App\Optional;
 use Illuminate\Http\Request;
 
 class CarController extends Controller
@@ -26,7 +27,8 @@ class CarController extends Controller
     public function create()
     {
         $car = new Car();
-        return view('cars.create', compact('car'));
+        $optionals = Optional::all();
+        return view('cars.create', compact('car', 'optionals'));
     }
 
     /**
@@ -38,14 +40,15 @@ class CarController extends Controller
     public function store(Request $request)
     {
         //
-        $sendData = $request->all();
+        $sentData = $request->all();
 
-        $newComic = new Car();
-        $newComic->targa = $sendData['targa'];
-        $newComic->marca = $sendData['marca'];
-        $newComic->anno_immatricolazione = $sendData['anno_immatricolazione'];
-        $newComic->km = $sendData['km'];
-        $newComic->save();
+        $newCar = new Car();
+        $newCar->targa = $sentData['targa'];
+        $newCar->marca = $sentData['marca'];
+        $newCar->anno_immatricolazione = $sentData['anno_immatricolazione'];
+        $newCar->km = $sentData['km'];
+        $newCar->save();
+        $newCar->optionals()->sync($sentData['optionals']);
 
         return redirect()->route('cars.index');
     }
