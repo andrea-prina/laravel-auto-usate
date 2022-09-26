@@ -14,7 +14,7 @@ class CarsTableSeeder extends Seeder
     public function run(Faker $faker)
     {
 
-        $brands = ['Audi', 'Ford', 'Fiat', 'BMW'];
+        $brands = ['Audi', 'Ford', 'Fiat', 'BMW', 'Mercedes', 'Toyota'];
 
         for ($i=0; $i < 50; $i++) { 
             
