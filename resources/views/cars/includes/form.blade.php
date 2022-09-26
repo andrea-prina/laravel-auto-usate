@@ -18,7 +18,7 @@
                 <input type="text" class="form-control" id="km" name="km" value="{{ old('km', $car->km) }}">
             </div>
         </div>
-        <div class="col-4">
+        <div class="col-8 my-3">
             @foreach ($optionals as $optional)
                 @if ($errors->any())
                     <div class="form-check">
