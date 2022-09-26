@@ -13,4 +13,8 @@ class Car extends Model
         'anno_immatricolazione',
         'km'
     ];
+
+    public function optionals(){
+        return $this->belongsToMany(Optional::class);
+    }
 }
