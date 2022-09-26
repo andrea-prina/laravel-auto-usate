@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
             
             CarsTableSeeder::class,
             OptionalsTableSeeder::class,
+            CarsOptionalTableSeeder::class,
         ]);
     }
 }
