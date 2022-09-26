@@ -13,6 +13,15 @@ class CarController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    protected $validateData = [
+        'targa' => 'required|size:7',
+        'marca' => 'required|min:2|max:255',
+        'anno_immatricolazione' => 'required|date',
+        'km' => 'required|digits:8',
+        'optionals' => 'exists:optionals,id',
+    ];
+
     public function index()
     {
         $cars = Car::all();
@@ -40,6 +49,8 @@ class CarController extends Controller
     public function store(Request $request)
     {
         //
+        $validateData = $request->validate($this->validateData);
+
         $sentData = $request->all();
 
         $newCar = new Car();
@@ -89,6 +100,8 @@ class CarController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $validateData = $request->validate($this->validateData);
+        
         $sentData = $request->all();
 
         $car = Car::findOrFail($id);
