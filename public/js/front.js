@@ -1972,11 +1972,24 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("ul", _vm._l(_vm.cars, function (car) {
-    return _c("li", {
-      key: car.id
-    }, [_c("h1", [_vm._v(_vm._s(car.targa))])]);
-  }), 0)]);
+  return _c("div", {
+    staticClass: "container"
+  }, _vm._l(_vm.cars, function (car) {
+    return _c("div", {
+      key: car.id,
+      staticClass: "card my-4 p-3 mx-auto"
+    }, [_c("div", {
+      staticClass: "card-title my-2"
+    }, [_c("h1", [_vm._v(_vm._s(car.marca))])]), _vm._v(" "), _c("div", {
+      staticClass: "card-subtitle my-2"
+    }, [_c("span", [_vm._v(_vm._s(car.targa) + " - " + _vm._s(car.anno_immatricolazione) + " - km." + _vm._s(car.km))])]), _vm._v(" "), _c("div", {
+      staticClass: "card-subtitle my-2"
+    }, _vm._l(car.optionals, function (optional) {
+      return _c("span", {
+        key: optional.id
+      }, [_vm._v("\n                " + _vm._s(optional.nome) + "\n            ")]);
+    }), 0)]);
+  }), 0);
 };
 
 var staticRenderFns = [];
@@ -14569,7 +14582,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! E:\Git Repo\php-projects\New folder\laravel-auto-usate\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Users/andrea/Downloads/Corsi/Boolean/Classe_67/Repository/laravel-auto-usate/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })
