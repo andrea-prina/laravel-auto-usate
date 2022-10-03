@@ -21,6 +21,6 @@
     },
     "dependencies": {
         "bootstrap": "^5.2.1",
-        "vue": "^2.4.4"
+        "vue": "^2.7.10"
     }
 }
